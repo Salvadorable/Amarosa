@@ -505,7 +505,7 @@
 				TargetAttributes = {
 					91B4E2241E90722B0013CAA7 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = UTM6LELLUH;
+						DevelopmentTeam = C54QH5F96U;
 						ProvisioningStyle = Automatic;
 					};
 					91B4E2381E90722B0013CAA7 = {
@@ -923,7 +923,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_NOTICES = YES;
 				ASSETCATALOG_WARNINGS = YES;
-				DEVELOPMENT_TEAM = UTM6LELLUH;
+				DEVELOPMENT_TEAM = C54QH5F96U;
 				INFOPLIST_FILE = Amarosa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -940,7 +940,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_NOTICES = YES;
 				ASSETCATALOG_WARNINGS = YES;
-				DEVELOPMENT_TEAM = UTM6LELLUH;
+				DEVELOPMENT_TEAM = C54QH5F96U;
 				INFOPLIST_FILE = Amarosa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
