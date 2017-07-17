@@ -52,7 +52,7 @@ class CreateAccountViewController: UIViewController {
                 }
                 
                 if let imageData = UIImageJPEGRepresentation(#imageLiteral(resourceName: "defaultUser"), 0.5){
-                    var uuid = UUID().uuidString
+                    let uuid = UUID().uuidString
                     Storage.storage().reference().child("user_profile_pictures").child(uuid).putData(imageData, metadata: nil, completion: { (metadata, error) in
                         if let err = error{
                             print(err.localizedDescription)
