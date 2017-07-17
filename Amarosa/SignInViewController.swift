@@ -24,6 +24,14 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var amarosaLbl: UIImageView!
     //Actions
     //Firebase email login
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
     @IBAction func signInBtnClick(_ sender: Any) {
         let email = emailTxt.text
         let password = passwordTxt.text
@@ -44,28 +52,22 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
         
     }
     
-    fileprivate func setupFacebookBtn(){
-        //get access to the fb with the login button
-        
-        let width = self.view.frame.size.width
-        view.addSubview(faceLoginButton)
-
-        /*faceLoginButton.frame = CGRect(x: signInBtn.frame.origin.x, y: signInBtn.frame.origin.y + width/5.33,width: signInBtn.frame.size.width, height: signInBtn.frame.size.height)*/
-        faceLoginButton.frame = CGRect(x: width, y: signInBtn.frame.origin.y + width/5.33,width: signInBtn.frame.size.width, height: signInBtn.frame.size.height)
-        faceLoginButton.layer.cornerRadius = 20
-        faceLoginButton.layer.masksToBounds = true
-        faceLoginButton.delegate = self
-        
-        UIView.animate(withDuration: 1, delay: 0.5, animations: {
-            self.faceLoginButton.frame = CGRect(x: self.signInBtn.frame.origin.x
-                , y: self.signInBtn.frame.origin.y + width/5.33,width: self.view.frame.size.width - self.signInBtn.frame.origin.x*2, height: self.signInBtn.frame.size.height)
-        })
-        
-        //needs to be an array
-        faceLoginButton.readPermissions = ["email", "public_profile"]
-        
+    @IBAction func loginWithFacebook(_ sender: Any) {
+        let readPermissions = ["email", "public_profile"]
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: readPermissions, from: self) { (result, error) in
+            if ((error) != nil){
+                print("login failed with error: \(String(describing: error))")
+            } else if (result?.isCancelled)! {
+                print("login cancelled")
+            } else {
+                //present the account view controller
+                print("Successfully logged in with facebook")
+                self.showEmail()
+                self.performSegue(withIdentifier: "camera", sender: nil)
+            }
+        }
     }
-
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Did log out of facebook")
@@ -100,9 +102,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
                 currentFacebookUser.logOut()
                 return
             }
-            
-            
-            
             
             if let uid = user?.uid{
                 
@@ -161,27 +160,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
             print(result ?? "")
         })
     }
-
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupFacebookBtn()
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     func myAlert(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
