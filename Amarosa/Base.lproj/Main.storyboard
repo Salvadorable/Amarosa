@@ -522,7 +522,7 @@
         <scene sceneID="m2a-19-rkE">
             <objects>
                 <collectionViewController id="485-XJ-B96" customClass="ChatCollectionViewController" customModule="Amarosa" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Sji-c2-Lxg">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Sji-c2-Lxg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -564,7 +564,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5F-Hw-En3">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5F-Hw-En3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sq9-vI-3uL">
@@ -843,6 +843,7 @@
                         <outlet property="nameTxt" destination="mUE-p8-fgX" id="dm4-Vj-mvH"/>
                         <outlet property="passwordTextField" destination="HwG-LB-isJ" id="35F-sI-ivv"/>
                         <outlet property="passwordTxt" destination="HwG-LB-isJ" id="57k-Mr-Kde"/>
+                        <outlet property="scrollView" destination="H5F-Hw-En3" id="uf0-tN-vdr"/>
                         <outletCollection property="genderButtons" destination="caB-Ra-Nxu" collectionClass="NSMutableArray" id="tUL-Oi-G8z"/>
                         <outletCollection property="genderButtons" destination="fPP-Sx-lX9" collectionClass="NSMutableArray" id="Max-KK-jZI"/>
                         <outletCollection property="genderButtons" destination="RgW-Hf-nys" collectionClass="NSMutableArray" id="XJC-eq-y8K"/>

@@ -29,6 +29,7 @@
 		0BDF8B1A1F14FE96009B0180 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDF8B191F14FE96009B0180 /* CameraViewController.swift */; };
 		8478A4C4529A161F083453E8 /* Pods_AmarosaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E52C1D31386F1D931D9132 /* Pods_AmarosaTests.framework */; };
 		8B7F4539E4FDA20A9F780C7E /* Pods_AmarosaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A75035D57CCFEA58274F3BA /* Pods_AmarosaUITests.framework */; };
+		9138472E1F1D7025007CC576 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9138472D1F1D7025007CC576 /* DismissKeyboard.swift */; };
 		91B445D81EEC8352006C6F36 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B445D71EEC8352006C6F36 /* RoundedButton.swift */; };
 		91B445DA1EEC8D5D006C6F36 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B445D91EEC8D5D006C6F36 /* BorderedButton.swift */; };
 		91B445DC1EECB119006C6F36 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B445DB1EECB119006C6F36 /* SignInViewController.swift */; };
@@ -130,6 +131,7 @@
 		566118611DF0A63FD7F51122 /* Pods_Amarosa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amarosa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B1C2E7154C061848A6602B /* Pods-AmarosaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmarosaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmarosaUITests/Pods-AmarosaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8F20959CF576DDE0610152AC /* Pods-AmarosaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmarosaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmarosaTests/Pods-AmarosaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9138472D1F1D7025007CC576 /* DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
 		91B445D71EEC8352006C6F36 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		91B445D91EEC8D5D006C6F36 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		91B445DB1EECB119006C6F36 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				0BDF8B0E1F1419B5009B0180 /* ChatInputContainer.swift */,
 				0BDF8B141F141BD2009B0180 /* ChatMessageCell.swift */,
 				0B20C09B1F19303900084B0A /* LoveStoryPostCell.swift */,
+				9138472D1F1D7025007CC576 /* DismissKeyboard.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				0BDF8B0F1F1419B5009B0180 /* ChatInputContainer.swift in Sources */,
 				91B446301EECD2D8006C6F36 /* UDatePicker.swift in Sources */,
 				91B4E2291E90722B0013CAA7 /* AppDelegate.swift in Sources */,
+				9138472E1F1D7025007CC576 /* DismissKeyboard.swift in Sources */,
 				0B20C0991F1929A600084B0A /* LoveStoriesViewController.swift in Sources */,
 				0BDF8B091F1418C9009B0180 /* User.swift in Sources */,
 				0B40BC6C1F1808D90014DA13 /* RootViewController.swift in Sources */,

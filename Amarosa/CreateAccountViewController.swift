@@ -27,6 +27,8 @@ class CreateAccountViewController: UIViewController {
     
     @IBOutlet weak var birthdayTextField: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet var genderButtons: [UIButton]!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     var datePicker: UDatePicker?
     var genderSelected = false
 
@@ -76,11 +78,7 @@ class CreateAccountViewController: UIViewController {
                 
             })
         }
-        
-        
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +92,31 @@ class CreateAccountViewController: UIViewController {
         birthdayTextField.iconFont = UIFont(name: "FontAwesome", size: 15)
         birthdayTextField.iconText = "\u{f1fd}"
         birthdayTextField.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWillShow(_ notification: Notification) {
+        if nameTextField.isFirstResponder {
+            adjustKeyboardForInsetShow(true, notification)
+        }
+    }
+    
+    func keyboardWillHide(_ notification: Notification) {
+        if nameTextField.isFirstResponder {
+            adjustKeyboardForInsetShow(false, notification)
+        }
+    }
+    
+    func adjustKeyboardForInsetShow(_ show: Bool, _ notification: Notification) {
+        let userInfo = notification.userInfo ?? [:]
+        let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let adjustmentHeight = (keyboardFrame.height * (show ? 1 : -1))
+        scrollView.contentInset.bottom += adjustmentHeight
     }
     
     @IBAction func genderSelected(_ sender: Any) {
@@ -134,8 +157,11 @@ class CreateAccountViewController: UIViewController {
         alert.addAction(okay)
         self.present(alert, animated: true, completion: nil)
     }
-
-
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 }
 
 extension CreateAccountViewController: UITextFieldDelegate {
@@ -153,10 +179,12 @@ extension CreateAccountViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == birthdayTextField {
-            textField.resignFirstResponder()
+            view.endEditing(true)
             showDatePicker()
+            return false
         }
+        return true
     }
 }
